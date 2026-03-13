@@ -10,7 +10,7 @@ void Texture::loadFromFile(std::string_view path)
     if (!data)
     {
         glDeleteTextures(1, &m_id);
-        throw std::runtime_error("Failed to load texture: " + std::string(path));
+        throw std::runtime_error(std::string("Failed to load texture: ") + std::string(path));
     }
 
     GLenum dataFormat = 0;

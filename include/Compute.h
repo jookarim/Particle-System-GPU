@@ -6,6 +6,7 @@
 #include <memory>
 #include "Random.h"
 #include <vector>
+#include <glm/gtc/random.hpp>
 
 class Compute
 {
@@ -37,4 +38,5 @@ public:
 	void dispatch(unsigned int localSize) const;
 
 	unsigned int getNumParticles() const { return m_numParticles; }
+	void setNumParticles(int numParticles) { m_numParticles = numParticles; }
 };

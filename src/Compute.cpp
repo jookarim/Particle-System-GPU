@@ -69,7 +69,12 @@ void Compute::bindAlpha() const
 
 void Compute::resetParticles()
 {
-    m_numParticles *= 10;
+	if (m_numParticles >= 100000) {
+		m_numParticles = 100;
+	}
+	else {
+		m_numParticles *= 10;
+	}
 
     std::vector<glm::vec2> newPositions(m_numParticles, glm::vec2(0.f));
     std::vector<float> newAlpha(m_numParticles, 1.f);

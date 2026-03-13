@@ -64,20 +64,16 @@ int main()
 			glDispatchCompute((compute.getNumParticles() + 255) / 256, 1, 1);
 
 			glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
-
 			unsigned int counter = counterSSBO.readUInt();
-			
+
 			if (counter == compute.getNumParticles())
 			{
 				unsigned int current = compute.getNumParticles();
 
-				if (current < 1000000) 
+				if (current < 1000000)
 				{
-					glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
-
-					compute.resetParticles(); 
-
-					mesh = Mesh(compute.getNumParticles()); 
+					compute.resetParticles();
+					mesh = Mesh(compute.getNumParticles());
 				}
 			}
 
