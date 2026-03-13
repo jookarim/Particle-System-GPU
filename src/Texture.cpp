@@ -1,4 +1,5 @@
 #include "Texture.h"
+#include <string>
 
 void Texture::loadFromFile(std::string_view path)
 {
